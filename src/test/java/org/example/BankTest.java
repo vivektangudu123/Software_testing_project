@@ -10,6 +10,10 @@ public class BankTest {
         assertEquals(100.0, account.getBalance(), 0.001);
     }
     @Test
+    public void test_name() throws CurrencyNotFoundException{
+        assertEquals("USD", account.getDefaultCurrency());
+    }
+    @Test
     public void testAddMoneyInDifferentCurrency() throws CurrencyNotFoundException{
         account.addMoney(100.0, "USD");
         assertEquals(100, account.getBalance(), 0.001);
@@ -27,10 +31,19 @@ public class BankTest {
     public void testSetDefaultCurrencyWithInvalidConversion() throws CurrencyNotFoundException{
         account.addMoney(100.0, "USD");
         account.setDefaultCurrency("INVALID");
-
     }
     @Test(expected = CurrencyNotFoundException.class)
     public void test_invalid() throws CurrencyNotFoundException{
         account.addMoney(100.0, "US");
+    }
+    @Test(expected = CurrencyNotFoundException.class)
+    public void test_invali() throws CurrencyNotFoundException{
+        CurrencyConverter cur=account.get_CurrencyConverter();
+        cur.convertToDefaultCurrency(100,"HA");
+    }
+    @Test(expected = CurrencyNotFoundException.class)
+    public void test_inva() throws CurrencyNotFoundException{
+        CurrencyConverter cur=account.get_CurrencyConverter();
+        cur.convertFromDefaultCurrency(100,"HA");
     }
 }

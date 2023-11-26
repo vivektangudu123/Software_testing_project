@@ -81,14 +81,14 @@ public class Calculator
     public static double addInput(Scanner keyboard)
     {
         //Scanner keyboard = new Scanner(in);
-        int res;
-        if(keyboard.hasNextInt())
+        double res;
+        if(keyboard.hasNextDouble())
         {
             while(true)
             {
                 try
                 {
-                    res=keyboard.nextInt();
+                    res=keyboard.nextDouble();
                 }
                 catch(InputMismatchException obj)
                 {
@@ -159,14 +159,14 @@ public class Calculator
     public static double mulInput(Scanner keyboard)
     {
         //Scanner keyboard = new Scanner(in);
-        int res;
-        if(keyboard.hasNextInt())
+        double res;
+        if(keyboard.hasNextDouble())
         {
             while(true)
             {
                 try
                 {
-                    res=keyboard.nextInt();
+                    res=keyboard.nextDouble();
                 }
                 catch(InputMismatchException obj)
                 {
@@ -198,14 +198,14 @@ public class Calculator
     public static double divInput(Scanner keyboard)
     {
         //Scanner keyboard = new Scanner(in);
-        int res;
-        if(keyboard.hasNextInt())
+        double res;
+        if(keyboard.hasNextDouble())
         {
             while(true)
             {
                 try
                 {
-                    res=keyboard.nextInt();
+                    res=keyboard.nextDouble();
                 }
                 catch(InputMismatchException obj)
                 {
@@ -741,7 +741,7 @@ public class Calculator
                         {
                             double num = Calculator.addInput(keyboard);
                             if(num==0.1)break;
-                            res = add((int)num,(int)res);
+                            res = add((double)num,(double)res);
                         }
                         break;
                     case 2:
@@ -761,7 +761,7 @@ public class Calculator
                         {
                             double num = Calculator.mulInput(keyboard);
                             if(num==0.1)break;
-                            res = multiply((int)num,(int)res);
+                            res = multiply((double)num,(double)res);
                         }
                         break;
                     case 4:
@@ -776,7 +776,7 @@ public class Calculator
                                 continue;
                             }
                             if(flag==0)res = (int)num;
-                            else res = divide((int)num,(int)res);
+                            else res = divide((double)num,(double)res);
                             flag=1;
                         }
                         break;
@@ -911,7 +911,7 @@ public class Calculator
         // //System.out.println(res);
         return res;
     }
-    public int add(int num, int res)
+    public double add(double num, double res)
     {
         res+=num;
         return res;
@@ -921,12 +921,12 @@ public class Calculator
         res-=num;
         return res;
     }
-    public int multiply(int num, int res)
+    public double multiply(double num, double res)
     {
         res*=num;
         return res;
     }
-    public int divide(int num, int res)
+    public double divide(double num, double res)
     {
         res/=num;
         return res;

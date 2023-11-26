@@ -30,7 +30,8 @@ public class CurrencyConverter {
 
         }
         double exchangeRate = exchangeRates.get(fromCurrency);
-        return amount / exchangeRate;
+        Calculator cal=new Calculator("1 3 "+exchangeRate+" "+amount+" =");
+        return cal.run();
 
     }
 
@@ -43,7 +44,8 @@ public class CurrencyConverter {
 
 
         double exchangeRate = exchangeRates.get(toCurrency);
-        return amount * exchangeRate;
+        Calculator cal=new Calculator("1 3 "+amount+" "+exchangeRate+" =");
+        return cal.run();
 
     }
 

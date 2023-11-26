@@ -13,12 +13,10 @@ class BankAccount {
     public void addMoney(double amount, String currency) throws CurrencyNotFoundException {
         try {
             double amountInDefaultCurrency = converter.convert(amount, currency, defaultCurrency);
-            if (amountInDefaultCurrency == -1) {
-                throw new CurrencyNotFoundException("Currency not found " + currency);
-            } else {
-                balance += amountInDefaultCurrency;
+                Calculator cal=new Calculator("1 1 "+balance+" "+amountInDefaultCurrency+" =");
+                balance=cal.run();
             }
-        } catch (CurrencyNotFoundException e) {
+        catch (CurrencyNotFoundException e) {
             // Re-throw the exception to allow it to propagate up
             throw e;
         }
@@ -27,11 +25,9 @@ class BankAccount {
     public void setDefaultCurrency(String currency) throws CurrencyNotFoundException {
         try {
             double balanceInNewDefaultCurrency = converter.convert(balance, defaultCurrency, currency);
-            if (balanceInNewDefaultCurrency == -1) {
-                throw new CurrencyNotFoundException("Currency not found " + currency);}
-            else{
+
             defaultCurrency = currency;
-            balance = balanceInNewDefaultCurrency;}
+            balance = balanceInNewDefaultCurrency;
         } catch (CurrencyNotFoundException e) {
             // You can log the exception or perform any other necessary actions
             throw new CurrencyNotFoundException("Currency not found " + currency);
