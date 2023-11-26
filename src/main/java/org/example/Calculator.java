@@ -772,8 +772,7 @@ public class Calculator
                             if(num==0.1)break;
                             if(flag==1 && num==0)
                             {
-                                //System.out.println("Cannot divide by 0");
-                                continue;
+                                throw new MyRuntimeException("Error occurred.");
                             }
                             if(flag==0)res = (int)num;
                             else res = divide((double)num,(double)res);

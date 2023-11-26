@@ -57,4 +57,13 @@ public class BankTest {
         cur.setExchangeRate("INR",100);
         assertEquals(10, cur.convertToDefaultCurrency(1000.0,"INR"),0.0001);
     }
+    @Test(expected = MyRuntimeException.class)
+    public void test_i() throws CurrencyNotFoundException{
+        account.addMoney(100.0, "USD");
+        CurrencyConverter conv=account. get_CurrencyConverter();
+        conv.setExchangeRate("INRP",0);
+        account.setDefaultCurrency("INRP");
+        account.addMoney(100,"INRP");
+        account.setDefaultCurrency("USD");
+    }
 }

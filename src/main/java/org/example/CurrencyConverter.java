@@ -30,8 +30,12 @@ public class CurrencyConverter {
 
         }
         double exchangeRate = exchangeRates.get(fromCurrency);
-        Calculator cal=new Calculator("1 4 "+amount+" "+exchangeRate+" =");
-        return cal.run();
+        try{
+            Calculator cal=new Calculator("1 4 "+amount+" "+exchangeRate+" =");
+            return cal.run();
+        }catch(Exception e) {
+            throw new MyRuntimeException("Error occurred.");
+        }
 
     }
 
