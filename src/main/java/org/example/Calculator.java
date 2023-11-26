@@ -105,10 +105,13 @@ public class Calculator
         {
             while(true)
             {
-                String x = keyboard.next();
-                if(x.equals("="))
-                {
-                    return 0.1;
+                try {
+                    String x = keyboard.next();
+                    if (x.equals("=")) {
+                        return 0.1;
+                    }
+                } catch (NoSuchElementException e) {
+                    throw new InvalidInputException("Invalid input. Please enter a valid number or '='.");
                 }
             }
         }
@@ -146,9 +149,9 @@ public class Calculator
                     }
                 } catch (NoSuchElementException e) {
                     throw new InvalidInputException("Invalid input. Please enter a valid number or '='.");
-                } catch (Exception e) {
-                    throw new MyRuntimeException("Error occurred.");
-                }
+                } //catch (Exception e) {
+//                    throw new MyRuntimeException("Error occurred.");
+//                }
             }
         }
         return res;
@@ -180,10 +183,13 @@ public class Calculator
         {
             while(true)
             {
-                String x = keyboard.next();
-                if(x.equals("="))
-                {
-                    return 0.1;
+                try {
+                    String x = keyboard.next();
+                    if (x.equals("=")) {
+                        return 0.1;
+                    }
+                } catch (NoSuchElementException e) {
+                    throw new InvalidInputException("Invalid input. Please enter a valid number or '='.");
                 }
             }
         }
@@ -216,10 +222,13 @@ public class Calculator
         {
             while(true)
             {
-                String x = keyboard.next();
-                if(x.equals("="))
-                {
-                    return 0.1;
+                try {
+                    String x = keyboard.next();
+                    if (x.equals("=")) {
+                        return 0.1;
+                    }
+                } catch (NoSuchElementException e) {
+                    throw new InvalidInputException("Invalid input. Please enter a valid number or '='.");
                 }
             }
         }
@@ -252,10 +261,13 @@ public class Calculator
         {
             while(true)
             {
-                String x = keyboard.next();
-                if(x.equals("="))
-                {
-                    return 0.1;
+                try {
+                    String x = keyboard.next();
+                    if (x.equals("=")) {
+                        return 0.1;
+                    }
+                } catch (NoSuchElementException e) {
+                    throw new InvalidInputException("Invalid input. Please enter a valid number or '='.");
                 }
             }
         }
@@ -648,7 +660,8 @@ public class Calculator
             if(res>1 || res<-1)
             {
                 //System.out.println("Val out of domain");
-                continue;
+                // continue;
+                throw new OutOfDomainException("Out of domain");
             }
             break;
         }
@@ -675,7 +688,7 @@ public class Calculator
             if(res>1 || res<-1)
             {
                 //System.out.println("Val out of domain");
-                continue;
+                throw new OutOfDomainException("Out of domain");
             }
             break;
         }
