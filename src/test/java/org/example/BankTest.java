@@ -5,16 +5,19 @@ import static org.junit.Assert.*;
 public class BankTest {
     private BankAccount account= new BankAccount("USD");
     @Test
-    public void test1() throws CurrencyNotFoundException{
+    public void test_checkbalance() throws CurrencyNotFoundException{
         account.addMoney(100.0, "USD");
         assertEquals(100.0, account.getBalance(), 0.001);
     }
     @Test
-    public void test_name() throws CurrencyNotFoundException{
-        assertEquals("USD", account.getDefaultCurrency());
+    public void test_check_defaultcurrency() throws CurrencyNotFoundException{
+        CurrencyConverter conv=account. get_CurrencyConverter();
+        conv.setExchangeRate("INR",10);
+        account.setDefaultCurrency("INR");
+        assertEquals("INR", account.getDefaultCurrency());
     }
     @Test
-    public void testAddMoneyInDifferentCurrency() throws CurrencyNotFoundException{
+    public void test_by_adding_money() throws CurrencyNotFoundException{
         account.addMoney(100.0, "USD");
         assertEquals(100, account.getBalance(), 0.001);
     }
@@ -24,7 +27,9 @@ public class BankTest {
         CurrencyConverter conv=account. get_CurrencyConverter();
         conv.setExchangeRate("INR",10);
         account.setDefaultCurrency("INR");
-        assertEquals(1000, account.getBalance(),0.0001);
+        account.addMoney(100.0, "INR");
+        account.addMoney(100.0, "USD");
+        assertEquals(2100, account.getBalance(),0.0001);
     }
 
     @Test(expected = CurrencyNotFoundException.class)
@@ -45,5 +50,11 @@ public class BankTest {
     public void test_inva() throws CurrencyNotFoundException{
         CurrencyConverter cur=account.get_CurrencyConverter();
         cur.convertFromDefaultCurrency(100,"HA");
+    }
+    @Test
+    public void test_in() throws CurrencyNotFoundException{
+        CurrencyConverter cur=new CurrencyConverter();
+        cur.setExchangeRate("INR",100);
+        assertEquals(10, cur.convertToDefaultCurrency(1000.0,"INR"),0.0001);
     }
 }
