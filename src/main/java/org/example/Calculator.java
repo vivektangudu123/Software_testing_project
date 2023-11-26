@@ -1,7 +1,7 @@
 package org.example.st_pro;
 import java.util.*;
-
 import java.io.*;
+
 public class Calculator
 {
     int choice,c1,c2;
@@ -24,13 +24,11 @@ public class Calculator
             }
             catch(NumberFormatException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error1");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -344,7 +342,7 @@ public class Calculator
             }
             catch(NumberFormatException obj)
             {
-                //System.out.println("Enter a valid number");
+                System.out.println("Enter a valid number");
                 continue;
             }
             catch(Exception o)
@@ -829,7 +827,8 @@ public class Calculator
                             flag=1;
                         }
                         break;
-                    default://System.out.println("Invalid choice");
+                    default:
+                        throw new InvalidInputException("Invalid choice. Please enter a valid operation.");//System.out.println("Invalid choice");
                 }
                 break;
             case 2:
@@ -937,10 +936,12 @@ public class Calculator
                         x = Calculator.expInput(keyboard);
                         res = exponential(x);
                         break;
-                    default://System.out.println("Invalid choice");
+                    default:
+                        throw new InvalidInputException("Invalid choice. Please enter a valid operation.");//System.out.println("Invalid choice");
                 }
                 break;
-            default://System.out.println("Invalid choice");
+            default:
+                throw new InvalidInputException("Invalid choice. Please enter a valid operation.");
         }
         // //System.out.println(res);
         return res;
