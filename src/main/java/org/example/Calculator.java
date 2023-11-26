@@ -137,14 +137,17 @@ public class Calculator
                 break;
             }
         }
-        else
-        {
-            while(true)
-            {
-                String x = keyboard.next();
-                if(x.equals("="))
-                {
-                    return 0.1;
+        else {
+            while (true) {
+                try {
+                    String x = keyboard.next();
+                    if (x.equals("=")) {
+                        return 0.1;
+                    }
+                } catch (NoSuchElementException e) {
+                    throw new InvalidInputException("Invalid input. Please enter a valid number or '='.");
+                } catch (Exception e) {
+                    throw new MyRuntimeException("Error occurred.");
                 }
             }
         }
