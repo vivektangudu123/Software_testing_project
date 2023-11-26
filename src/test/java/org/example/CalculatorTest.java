@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 public class CalculatorTest  {
     @Test
     public void test1() {
-        Calculator calc = new Calculator("1 1 ="); // Addition Operation
-        assertEquals(0.0, calc.run(), 0);
+        Calculator calc = new Calculator("1 1 ="); //Going to Addition Operation
+        assertEquals(0, calc.run(), 0);
     }
 
     @Test
@@ -93,7 +93,7 @@ public class CalculatorTest  {
         assertEquals(27.0, calc.run(), 0);
     }
 
-    @Test
+    @Test(expected = InvalidInputException.class)
     public void test15() {
         Calculator calc = new Calculator("2 5 12"); // There is no case 12 in case 5
         assertEquals(0.0, calc.run(), 0);
@@ -194,9 +194,25 @@ public class CalculatorTest  {
         Calculator calc = new Calculator("3");
         assertEquals(0.0, calc.run(), 0);
     }
+
     @Test(expected = InvalidInputException.class)
-    public void test_1(){
-        Calculator calc1 = new Calculator("111 1 1 4 5");
+    public void test_112() {
+        Calculator calc1 = new Calculator("2.3");
+        assertEquals(0, calc1.run(), 0);
+    }
+    @Test(expected = MyRuntimeException.class)
+    public void test_113(){
+        Calculator calc1 = new Calculator(" ");
         assertEquals(0, calc1.run(),0);
+    }
+    @Test(expected = MyRuntimeException.class)
+    public void test_114(){
+        Calculator calc1 = new Calculator("1  ");
+        assertEquals(0, calc1.run(),0);
+    }
+    @Test(expected = InvalidInputException.class)
+    public void test_115() {
+        Calculator calc1 = new Calculator("1 2.3");
+        assertEquals(0, calc1.run(), 0);
     }
 }

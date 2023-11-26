@@ -22,7 +22,7 @@ public class Calculator
             {
                 res=keyboard.nextInt();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
                 throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
@@ -44,15 +44,13 @@ public class Calculator
             {
                 res = keyboard.nextInt();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println(o.getClass().getName());
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -68,15 +66,13 @@ public class Calculator
             {
                 res=keyboard.nextInt();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
-            catch(RuntimeException o)
+            catch(Exception o)
             {
-                //System.out.println(o.getClass().getName());
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -94,15 +90,13 @@ public class Calculator
                 {
                     res=keyboard.nextInt();
                 }
-                catch(NumberFormatException obj)
+                catch(InputMismatchException obj)
                 {
-                    //System.out.println("Enter a valid number");
-                    continue;
+                    throw new InvalidInputException("Invalid input. Please enter a valid number.");
                 }
                 catch(Exception o)
                 {
-                    //System.out.println("Error");
-                    continue;
+                    throw new MyRuntimeException("Error occurred.");
                 }
                 break;
             }
@@ -132,15 +126,13 @@ public class Calculator
                 {
                     res=keyboard.nextInt();
                 }
-                catch(NumberFormatException obj)
+                catch(InputMismatchException obj)
                 {
-                    //System.out.println("Enter a valid number");
-                    continue;
+                    throw new InvalidInputException("Invalid input. Please enter a valid number.");
                 }
                 catch(Exception o)
                 {
-                    //System.out.println("Error3");
-                    continue;
+                    throw new MyRuntimeException("Error occurred.");
                 }
                 break;
             }
@@ -170,15 +162,13 @@ public class Calculator
                 {
                     res=keyboard.nextInt();
                 }
-                catch(NumberFormatException obj)
+                catch(InputMismatchException obj)
                 {
-                    //System.out.println("Enter a valid number");
-                    continue;
+                    throw new InvalidInputException("Invalid input. Please enter a valid number.");
                 }
                 catch(Exception o)
                 {
-                    //System.out.println("Error");
-                    continue;
+                    throw new MyRuntimeException("Error occurred.");
                 }
                 break;
             }
@@ -208,15 +198,13 @@ public class Calculator
                 {
                     res=keyboard.nextInt();
                 }
-                catch(NumberFormatException obj)
+                catch(InputMismatchException obj)
                 {
-                    //System.out.println("Enter a valid number");
-                    continue;
+                    throw new InvalidInputException("Invalid input. Please enter a valid number.");
                 }
                 catch(Exception o)
                 {
-                    //System.out.println("Error");
-                    continue;
+                    throw new MyRuntimeException("Error occurred.");
                 }
                 break;
             }
@@ -246,15 +234,13 @@ public class Calculator
                 {
                     res=keyboard.nextInt();
                 }
-                catch(NumberFormatException obj)
+                catch(InputMismatchException obj)
                 {
-                    //System.out.println("Enter a valid number");
-                    continue;
+                    throw new InvalidInputException("Invalid input. Please enter a valid number.");
                 }
                 catch(Exception o)
                 {
-                    //System.out.println("Error");
-                    continue;
+                    throw new MyRuntimeException("Error occurred.");
                 }
                 break;
             }
@@ -282,15 +268,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             if(res<=0)
             {
@@ -311,15 +295,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             if(res<=0)
             {
@@ -340,15 +322,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -364,15 +344,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -388,15 +366,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -412,15 +388,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -436,15 +410,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             if(res<=0)
             {
@@ -465,15 +437,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -489,15 +459,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -513,15 +481,13 @@ public class Calculator
             {
                 res=keyboard.nextInt();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -537,15 +503,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -561,15 +525,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -584,15 +546,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -608,15 +568,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -632,15 +590,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -656,15 +612,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -680,15 +634,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             if(res>1 || res<-1)
             {
@@ -709,15 +661,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             if(res>1 || res<-1)
             {
@@ -738,15 +688,13 @@ public class Calculator
             {
                 res=keyboard.nextDouble();
             }
-            catch(NumberFormatException obj)
+            catch(InputMismatchException obj)
             {
-                //System.out.println("Enter a valid number");
-                continue;
+                throw new InvalidInputException("Invalid input. Please enter a valid number.");
             }
             catch(Exception o)
             {
-                //System.out.println("Error");
-                continue;
+                throw new MyRuntimeException("Error occurred.");
             }
             break;
         }
@@ -912,7 +860,8 @@ public class Calculator
                                 val = Calculator.atanInput(keyboard);
                                 res = atangent(val);
                                 break;
-                            default://System.out.println("Invalid choice");
+                            default:
+                                throw new InvalidInputException("Invalid choice. Please enter a valid operation.");
                         }
                         break;
                     case 6:
