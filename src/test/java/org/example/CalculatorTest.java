@@ -1,12 +1,14 @@
 package org.example.st_pro;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
 
 public class CalculatorTest  {
     @Test
     public void test1() {
-        Calculator calc = new Calculator("1 1 7 5 ="); // Addition Operation
-        assertEquals(12.0, calc.run(), 0);
+        Calculator calc = new Calculator("1 1 7 5.2 ="); // Addition Operation
+        assertEquals(12.2, calc.run(), 0.001);
     }
 
     @Test
@@ -480,11 +482,13 @@ public class CalculatorTest  {
         Calculator calc1 = new Calculator("2.3"); // Invalid Input
         assertEquals(0, calc1.run(), 0);
     }
+
     @Test(expected = MyRuntimeException.class)
     public void test_113(){
         Calculator calc1 = new Calculator(" "); // Invalid Input
         assertEquals(0, calc1.run(),0);
     }
+
     @Test(expected = MyRuntimeException.class)
     public void test_114(){
         Calculator calc1 = new Calculator("1  "); // Invalid Input
@@ -495,16 +499,27 @@ public class CalculatorTest  {
         Calculator calc1 = new Calculator("1 2.3"); // Invalid Input
         assertEquals(0, calc1.run(), 0);
     }
+
     @Test(expected = InvalidInputException.class)
     public void test_116() {
         Calculator calc1 = new Calculator("2 b"); // Invalid Input
         assertEquals(0, calc1.run(), 0);
     }
+
     @Test(expected = MyRuntimeException.class)
     public void test_117() {
         Calculator calc1 = new Calculator("2  "); // Invalid Input
         assertEquals(0, calc1.run(), 0);
     }
 
+    @Test(expected = OutOfDomainException.class)
+    public void test_334(){
+        String validInput = "1.5\n";
+        System.setIn(new ByteArrayInputStream(validInput.getBytes()));
+        Scanner scanner = new Scanner(System.in);
+        Calculator calc1 = new Calculator("2 2");
+        double result = calc1.asinInput(scanner);
+        assertEquals(0.5, result, 0.001);
+    }
 
 }

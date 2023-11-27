@@ -69,6 +69,13 @@ public class BankTest {
         cur.setExchangeRate("INR",100);
         assertEquals(10, cur.convertToDefaultCurrency(1000.0,"INR"),0.0001);
     }
+    // To conver line coverage, We added this test to check the function convertToDefaultCurrency
+    @Test(expected = CurrencyNotFoundException.class)
+    public void test_in_() throws CurrencyNotFoundException{
+        CurrencyConverter cur=new CurrencyConverter();
+        cur.setExchangeRate("INR",100);
+        assertEquals(10, cur.convertToDefaultCurrency(1000.0,"IN"),0.0001);
+    }
 
 
     // Add a value of cuurency with value 0. An check the internal integration of calculator divison.
